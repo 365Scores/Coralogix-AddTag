@@ -1,0 +1,24 @@
+{
+  "name": "Coralogix-AddTag",
+  "version": "0.1.0",
+  "description": "Add a tag to Coralogix application and sub-system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/365Scores/Coralogix-AddTag.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/365Scores/Coralogix-AddTag/issues"
+  },
+  "homepage": "https://github.com/365Scores/Coralogix-AddTag#readme",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "node-fetch": "^2.6.1"
+  }
+}

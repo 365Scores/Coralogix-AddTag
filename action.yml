@@ -1,0 +1,18 @@
+name: 'Coralogix - Add Tag'
+description: 'Pushes a tag to Coralogix'
+inputs:
+  key:
+    description: 'Your company's private key'
+    required: true
+  application:
+    description: 'Your application name'
+    required: true
+  subsystem:
+    description: 'Your subsystem names. You can input more than one subsystem name, use comma delimiter ‘,’  between subsystems names'
+    required: true
+  name:
+    description: 'Your version tag name'
+    required: true
+runs:
+  using: 'node15'
+  main: 'index.js'
