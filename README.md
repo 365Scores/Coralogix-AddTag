@@ -22,9 +22,11 @@ https://coralogix.com/tutorials/software-builds-display/
 
 ## Example usage
 
+```
 uses: 365scores/Coralogix-AddTag@v0
 with:
   key: '254as5dasd2f51ef3s5'
   application: 'Calculator'
   subsystem: 'Linear Algebra'
   name: '1.0.1-Alfa'
+```
