@@ -2,7 +2,7 @@ name: 'Coralogix - Add Tag'
 description: 'Pushes a tag to Coralogix'
 inputs:
   key:
-    description: 'Your company's private key'
+    description: 'Your company private key'
     required: true
   application:
     description: 'Your application name'
