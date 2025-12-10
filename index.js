@@ -8,16 +8,30 @@ async function main() {
     const application = core.getInput('application');
     const subsystem = core.getInput('subsystem');
     const name = core.getInput('name');
-    //console.log(`key ${key}, application ${application}, subsystem ${subsystem}, name ${name}`);
-    
-    const url = `https://webapi.coralogix.com/api/v1/addTag?key=${key}\&application=${application}\&subsystem=${subsystem}\&name=${name}`;
-	const response = await fetch(url);
-    
+    // console.log(`key ${key}, application ${application}, subsystem ${subsystem}, name ${name}`);
+
+    const url = 'https://ng-api-http.eu1.coralogix.com/api/v1/external/tags';
+    const data = {
+      "name": name,
+      "application": [application],
+      "subsystem": [subsystem],
+    };
+    const options = {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${key}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    };
+    const response = await fetch(url, options);
     if (response.ok) {
-  	  const responseText = await response.text();
-  	  console.log(`Coralogix response: ${responseText}`);
+      console.log(`Status: ${response.status}, statusText: ${response.statusText}}`);
+      const responseText = await response.text();
+      console.log(`Coralogix response: ${responseText}`);
     }
     else {
+      console.log(`Status: ${response.status}, statusText: ${response.statusText}}`);
       const error = await response.text();
       core.setFailed(`An error has occured: ${error}`);
     }
