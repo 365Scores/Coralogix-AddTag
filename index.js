@@ -26,12 +26,12 @@ async function main() {
     };
     const response = await fetch(url, options);
     if (response.ok) {
-      console.log(`Status: ${{ status: response.status, statusText: response.statusText }}`);
+      console.log(`Status: ${response.status}, statusText: ${response.statusText}}`);
       const responseText = await response.text();
       console.log(`Coralogix response: ${responseText}`);
     }
     else {
-      console.log(`Status: ${{ status: response.status, statusText: response.statusText }}`);
+      console.log(`Status: ${response.status}, statusText: ${response.statusText}}`);
       const error = await response.text();
       core.setFailed(`An error has occured: ${error}`);
     }
